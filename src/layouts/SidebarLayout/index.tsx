@@ -1,7 +1,38 @@
-import React from 'react';
+import { FC, ReactNode } from 'react';
+import { styled } from '@mui/material/styles';
+import { Box } from '@mui/material';
 
-const index = (props) => (
-      <>그렇다</>
-  );
+import Header from './Header'
 
-export default index;
+const MainWrapper = styled(Box) (
+  () => `
+    flex: 1 1 auto;
+    display: flex;
+    height: 100%;
+  `
+)
+
+const MainContent = styled(Box) (
+  () => `
+    margin-top: 20px;
+    flex: 1 1 auto;
+    overflow: auto
+  `
+)
+
+interface SidebarLayoutProps {
+  children?: ReactNode;
+}
+
+const SidebarLayout: FC<SidebarLayoutProps> = () => {
+  return (
+    <>
+      <MainWrapper>
+        <Header />
+        <MainContent />
+      </MainWrapper>
+    </>
+  )
+}
+
+export default SidebarLayout;

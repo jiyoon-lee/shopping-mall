@@ -4,7 +4,7 @@ import { RouteObject } from 'react-router'
 
 import SidebarLayout from 'layouts/SidebarLayout';
 import BaseLayout from 'layouts/BaseLayout';
-import SuspenseLoader from './components/SuspenseLoader';
+import SuspenseLoader from 'components/SuspenseLoader';
 
 const Loader = (Component) => (props) => (
   <Suspense fallback={<SuspenseLoader />}>
