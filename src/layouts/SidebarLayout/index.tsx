@@ -1,22 +1,22 @@
 import { FC, ReactNode } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
+import { Outlet } from 'react-router-dom'
 
 import Header from './Header'
+import Footer from './Footer'
 
 const MainWrapper = styled(Box) (
   () => `
-    flex: 1 1 auto;
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    height: 100vh;
   `
 )
 
 const MainContent = styled(Box) (
   () => `
-    margin-top: 20px;
-    flex: 1 1 auto;
-    overflow: auto
+    flex: 1 auto;
   `
 )
 
@@ -29,7 +29,10 @@ const SidebarLayout: FC<SidebarLayoutProps> = () => {
     <>
       <MainWrapper>
         <Header />
-        <MainContent />
+        <MainContent>
+          <Outlet />
+        </MainContent>
+        <Footer />
       </MainWrapper>
     </>
   )
